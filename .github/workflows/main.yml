@@ -90,7 +90,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.4']
+        versions:
+          - php: '7.4'
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -98,7 +99,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: ${{ matrix.versions.php }}
           extensions: ${{ env.php_extensions }}
           coverage: xdebug2
 
@@ -125,5 +126,12 @@ jobs:
       - name: Run phpunit
         run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
-      - name: Upload coverage
-        run: bash <(curl -s https://codecov.io/bash) -f coverage.xml -F php
+      - name: Upload codecov coverage
+        uses: codecov/codecov-action@v2
+        with:
+          files: ./coverage.xml
+
+      - name: Upload Scrutinizer coverage
+        uses: sudo-bot/action-scrutinizer@latest
+        with:
+            cli-args: "--format=php-clover ./coverage.xml"
