@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<phpunit backupGlobals="false" processIsolation="false" backupStaticAttributes="false" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/5.7/phpunit.xsd" bootstrap="vendor/silverstripe/framework/tests/bootstrap.php" colors="true">
+    <testsuite name="csoellinger/silverstripe-rollbar">
+        <directory>tests/</directory>
+    </testsuite>
+    <!-- <logging> -->
+        <!-- and this is where your report will be written -->
+        <!-- <log type="coverage-text" target="php://stdout" showUncoveredFiles="true" /> -->
+        <!-- <log type="coverage-html" target="./coverage/html/" showUncoveredFiles="true" /> -->
+    <!-- </logging> -->
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="false">
+            <directory suffix=".php">.</directory>
+            <exclude>
+                <directory suffix=".php">src/Factory/</directory>
+                <directory suffix=".php">tests/</directory>
+                <directory suffix=".php">vendor/</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>

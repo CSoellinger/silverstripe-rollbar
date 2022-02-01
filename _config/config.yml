@@ -1,0 +1,16 @@
+---
+Name: module-csoellinger-silverstripe-rollbar
+---
+#
+# THIS CONFIG MUST BE SET IN YOUR APPLICATION
+#
+# CSoellinger\SilverStripeRollbar\Configuration\RollbarConfiguration:
+#   access_token: Your Access Token
+# CSoellinger\SilverStripeRollbar\Configuration\RollbarJsConfiguration:
+#   accessToken: Your Client Access Token
+# SilverStripe\Core\Injector\Injector:
+#   RollbarLogHandler:
+#     class: CSoellinger\SilverStripeRollbar\Log\RollbarLogHandler
+#   Psr\Log\LoggerInterface:
+#     calls:
+#       RollbarLogHandler: [pushHandler, ["%$RollbarLogHandler"]]

@@ -1,0 +1,7 @@
+node_modules
+/vendor/
+.DS_Store
+.composer
+composer.phar
+.env
+composer.lock

@@ -1,0 +1,70 @@
+{
+    "name": "csoellinger/silverstripe-rollbar",
+    "description": "Genius logging with rollbar. https://rollbar.com",
+    "license": "BSD-3-Clause",
+    "type": "silverstripe-vendormodule",
+    "keywords": [
+        "silverstripe",
+        "module",
+        "plugin",
+        "addon",
+        "CMS",
+        "Framework",
+        "Rollbar",
+        "RollbarPHP",
+        "RollbarJS",
+        "JS",
+        "PHP",
+        "Logging"
+    ],
+    "readme": "README.md",
+    "authors": [
+        {
+            "name": "CSoellinger",
+            "email": "christopher.soellinger@gmail.com",
+            "role": "developer"
+        }
+    ],
+    "homepage": "https://github.com/CSoellinger/silverstripe-rollbar",
+    "support": {
+        "issues": "https://github.com/CSoellinger/silverstripe-rollbar/issues"
+    },
+    "require": {
+        "php": "^7.1,<8.0",
+        "rollbar/rollbar": "^2.1",
+        "silverstripe/framework": "^4.0,<4.10"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.23",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.4",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-strict-rules": "^1.1",
+        "silverstripe/sqlite3": "^2",
+        "sminnee/phpunit": "^5.7",
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "CSoellinger\\SilverStripeRollbar\\": "src/",
+            "CSoellinger\\SilverStripeRollbar\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/vendor-plugin": true,
+            "silverstripe/recipe-plugin": true,
+            "phpstan/extension-installer": true,
+            "ergebnis/composer-normalize": true
+        }
+    },
+    "scripts": {
+        "analyze": "phpstan analyse -l 9 src tests",
+        "lint": "phpcs -p --cache --parallel=2 .",
+        "lint:fix": "phpcbf -p --cache --parallel=2 .",
+        "test": "phpunit"
+    }
+}
