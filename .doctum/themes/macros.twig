@@ -39,7 +39,7 @@
                 {{- abbr_class(hint.name) -}}
             {%- endif %}
             {%- if hint.array %}[]{% endif %}
-            {%- if not loop.last %}|{% endif %}
+            {%- if not loop.last %}\|{% endif %}
         {%- endfor %}
     {%- endif %}
 {%- endmacro %}

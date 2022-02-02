@@ -85,11 +85,11 @@
 {% block method_signature -%}
 {{ "\n" }}
 ###{{ " " }}
-{#  #}{%- if method.final -%}final{%- endif -%}
-{#  #}{%- if method.abstract -%}abstract{%- endif -%}
-{#  #}{%- if method.static -%}static{%- endif -%}
-{#  #}{%- if method.protected -%}protected{%- endif -%}
-{#  #}{%- if method.private -%}private{%- endif -%}
+{#  #}{%- if method.final -%}final {%- endif -%}
+{#  #}{%- if method.abstract -%}abstract {%- endif -%}
+{#  #}{%- if method.static -%}static {%- endif -%}
+{#  #}{%- if method.protected -%}protected {%- endif -%}
+{#  #}{%- if method.private -%}private {%- endif -%}
 {#  #}{{- " " -}}{{- hint_link(method.hint) -}}
 {{- " " -}}**{{- method.name|raw -}}**{{ block('method_parameters_signature') }}
 
@@ -161,12 +161,12 @@
 |---|---|---|---|
 {#  #}{% for property in properties %}
 |<a name="property_{{ property.name|raw }}"></a>
-            {%- if property.static -%}static{%- endif -%}
-            {%- if property.protected -%}protected{%- endif -%}
-            {%- if property.private -%}private{%- endif -%}
-            {{ " " }}{{- hint_link(property.hint) -}}
+            {%- if property.static -%}static&nbsp;{%- endif -%}
+            {%- if property.protected -%}protected&nbsp;{%- endif -%}
+            {%- if property.private -%}private&nbsp;{%- endif -%}
+            {{- hint_link(property.hint) -}}
         |${{- property.name|raw -}}
-        |{{- property.shortdesc|desc(class) -}}
+        |{{- property.shortdesc|desc(class)|replace({'\n': ' '}) -}}
         |{%- if property.class is not same as(class) -%}
                     <small>{{ 'from&nbsp;%s'|trans|format(property_link(property, false, true))|replace({'.html': '.md'})|raw }}</small>
         {%- endif -%}|

@@ -2,6 +2,7 @@
 
 use Doctum\Doctum;
 use Doctum\RemoteRepository\GitHubRemoteRepository;
+use Doctum\Parser\Filter\TrueFilter;
 use Doctum\Version\GitVersionCollection;
 use Symfony\Component\Finder\Finder;
 
@@ -21,15 +22,21 @@ $versions = GitVersionCollection::create($dir)
     // ->add('2.0', '2.0 branch')
     ->add('main', 'main branch');
 
-return new Doctum($iterator, [
-    'versions'             => $versions,
+$doctum = new Doctum($iterator, [
+    // 'versions'             => $versions,
     'template_dirs'        => [__DIR__ . '/themes'],
     'theme'                => 'markdown',
-    'title'                => 'yourlib API',
+    'title'                => 'SilverStripe Rollbar Module',
     'language'             => 'en', // Could be 'fr'
-    'build_dir'            => __DIR__ . '/build/sf2/%version%',
-    'cache_dir'            => __DIR__ . '/cache/sf2/%version%',
+    'build_dir'            => __DIR__ . '/../docs/en/api/',
+    'cache_dir'            => __DIR__ . '/cache/en/',
     'source_dir'           => dirname($dir) . '/',
     'remote_repository'    => new GitHubRemoteRepository('csoellinger/silverstripe-rollbar', dirname($dir)),
     'default_opened_level' => 2, // optional, 2 is the default value
 ]);
+
+$doctum['filter'] = function () {
+    return new TrueFilter();
+};
+
+return $doctum;
