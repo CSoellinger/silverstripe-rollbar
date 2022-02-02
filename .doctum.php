@@ -23,6 +23,7 @@ $versions = GitVersionCollection::create($dir)
 
 return new Doctum($iterator, [
     'versions'             => $versions,
+    'theme'                => 'markdown',
     'title'                => 'yourlib API',
     'language'             => 'en', // Could be 'fr'
     'build_dir'            => __DIR__ . '/build/sf2/%version%',
