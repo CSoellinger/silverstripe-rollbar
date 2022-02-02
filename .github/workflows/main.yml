@@ -131,7 +131,7 @@ jobs:
         with:
           files: ./coverage.xml
 
-      - name: Upload Scrutinizer coverage
-        uses: sudo-bot/action-scrutinizer@latest
-        with:
-            cli-args: "--format=php-clover ./coverage.xml"
+      # - name: Upload Scrutinizer coverage
+      #   uses: sudo-bot/action-scrutinizer@latest
+      #   with:
+      #       cli-args: "--format=php-clover ./coverage.xml"
