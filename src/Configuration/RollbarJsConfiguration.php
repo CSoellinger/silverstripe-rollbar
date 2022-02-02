@@ -430,7 +430,7 @@ class RollbarJsConfiguration
      */
     public static function __toArray()
     {
-        $reflect = new ReflectionClass(RollbarJsConfiguration::class);
+        $reflect = new ReflectionClass(self::class);
         $options = array_keys($reflect->getStaticProperties());
         $config = [];
 
@@ -444,18 +444,22 @@ class RollbarJsConfiguration
     /**
      * Get rollbar ready config with pre filled values like environment, host, root and person(_fn).
      *
+     * @uses Controller::curr                   Get current controller for session SecurityID and current url
+     * @uses Director::get_environment_type     Get "dev", "test" or "live"
+     * @uses Director::host                     Get current hostname
+     *
      * @return array<string,mixed>
      */
     public static function getConfigArray()
     {
-        $ctrl = Controller::curr();
-        $sessionId = $ctrl->getRequest()->getSession()->get('SecurityID');
-
         $config = self::__toArray();
 
         if ($config['accessToken'] === '' || $config['accessToken'] === null) {
             throw new Exception('No rollbar access token set.');
         }
+
+        $ctrl = Controller::curr();
+        $sessionId = $ctrl->getRequest()->getSession()->get('SecurityID');
 
         $config['payload'] = array_merge([
             'person' => self::getPerson(),
@@ -474,6 +478,8 @@ class RollbarJsConfiguration
     /**
      * Get person data from SilverStripe member if config ```captureUsername``` and/or ```captureEmail``` is set to
      * true.
+     *
+     * @uses Security::getCurrentUser Get current user from the SilverStripe framework
      *
      * @return null|array<string,int|string>
      */

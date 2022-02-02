@@ -3,11 +3,6 @@
     <testsuite name="csoellinger/silverstripe-rollbar">
         <directory>tests/</directory>
     </testsuite>
-    <!-- <logging> -->
-        <!-- and this is where your report will be written -->
-        <!-- <log type="coverage-text" target="php://stdout" showUncoveredFiles="true" /> -->
-        <!-- <log type="coverage-html" target="./coverage/html/" showUncoveredFiles="true" /> -->
-    <!-- </logging> -->
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="false">
             <directory suffix=".php">.</directory>

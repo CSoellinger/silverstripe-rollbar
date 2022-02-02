@@ -531,7 +531,7 @@ class RollbarConfiguration
      */
     public static function __toArray()
     {
-        $reflect = new ReflectionClass(RollbarConfiguration::class);
+        $reflect = new ReflectionClass(self::class);
         $options = array_keys($reflect->getStaticProperties());
         $config = [];
 
@@ -544,6 +544,11 @@ class RollbarConfiguration
 
     /**
      * Get rollbar ready config with pre filled values like environment, host, root and person(_fn).
+     *
+     * @uses Director::get_environment_type     Get "dev", "test" or "live"
+     * @uses Director::host                     Get current hostname
+     * @uses Director::baseFolder               Root folder for the site
+     * @uses self::getPerson                    get person details
      *
      * @return array<string,mixed>
      */
@@ -566,6 +571,8 @@ class RollbarConfiguration
     /**
      * Get person data from SilverStripe member if config ```capture_username``` and/or ```capture_email``` is set to
      * true.
+     *
+     * @uses Security::getCurrentUser Get current user from the SilverStripe framework
      *
      * @return null|array<string,int|string>
      */

@@ -1,6 +1,6 @@
 {
     "name": "csoellinger/silverstripe-rollbar",
-    "description": "Genius logging with rollbar. https://rollbar.com",
+    "description": "SilverStripe log handler for rollbar. https://rollbar.com",
     "license": "BSD-3-Clause",
     "type": "silverstripe-vendormodule",
     "keywords": [
@@ -35,7 +35,7 @@
         "silverstripe/framework": "^4.0,<4.10"
     },
     "require-dev": {
-        "ergebnis/composer-normalize": "^2.23",
+        "ergebnis/composer-normalize": "^2.7",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^1.0",

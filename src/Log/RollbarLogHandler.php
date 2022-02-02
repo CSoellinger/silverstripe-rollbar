@@ -13,6 +13,11 @@ class RollbarLogHandler extends PsrHandler
 {
     /**
      * Initialize the rollbar logger.
+     *
+     * @uses RollbarConfiguration::config       Get the rollbar config
+     * @uses RollbarConfiguration::configArray  Get the whole rollbar config
+     * @uses Rollbar:init                       Initialize rollbar with our config
+     * @uses Rollbar:logger                     Initialize the rollbar logger
      */
     public function __construct()
     {

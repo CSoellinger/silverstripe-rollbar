@@ -4,8 +4,11 @@ namespace CSoellinger\SilverStripeRollbar\Tests\Provider;
 
 use CSoellinger\SilverStripeRollbar\Configuration\RollbarJsConfiguration;
 use CSoellinger\SilverStripeRollbar\Provider\RollbarJsTemplateProvider;
+use SilverStripe\Control\CliController;
+use SilverStripe\Control\Controller;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Dev\SapphireTest;
+use SilverStripe\View\SSViewer;
 
 /**
  * @covers \CSoellinger\SilverStripeRollbar\Provider\RollbarJsTemplateProvider
