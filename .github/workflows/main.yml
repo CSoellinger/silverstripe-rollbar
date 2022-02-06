@@ -7,6 +7,7 @@ on:
     branches:
       - main
 env:
+  SCRUTINIZER_TOKEN: ${{ secrets.SCRUTINIZER_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   php_extensions: ctype, dom, fileinfo, hash, intl, mbstring, session, simplexml, tokenizer, xml, gd, sqlite3, pcov, opcache, tidy, zip
   SS_DATABASE_CLASS: SQLite3Database
@@ -131,7 +132,7 @@ jobs:
         with:
           files: ./coverage.xml
 
-      # - name: Upload Scrutinizer coverage
-      #   uses: sudo-bot/action-scrutinizer@latest
-      #   with:
-      #       cli-args: "--format=php-clover ./coverage.xml"
+      - name: Upload Scrutinizer coverage
+        uses: sudo-bot/action-scrutinizer@latest
+        with:
+            cli-args:  --access-token=${{ env.SCRUTINIZER_TOKEN }} --format=php-clover ./coverage.xml
