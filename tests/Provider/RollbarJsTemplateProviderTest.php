@@ -48,7 +48,9 @@ class RollbarJsTemplateProviderTest extends SapphireTest
      */
     public function testRollbarJS(): void
     {
-        $expect = "\n" . trim(file_get_contents(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', 'rollbarjs-script.txt'])));
+        $fileContentPath = implode(DIRECTORY_SEPARATOR, [__DIR__, '..', 'rollbarjs-script.txt']);
+        $fileContent = (string) file_get_contents($fileContentPath);
+        $expect = "\n" . trim($fileContent);
 
         self::assertEquals($expect, RollbarJsTemplateProvider::RollbarJS());
     }
