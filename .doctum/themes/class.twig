@@ -166,7 +166,7 @@
             {%- if property.private -%}private&nbsp;{%- endif -%}
             {{- hint_link(property.hint) -}}
         |${{- property.name|raw -}}
-        |{{- property.shortdesc|desc(class)|replace({'\n': ' '}) -}}
+        |{{- property.shortdesc|desc(class)|replace({'\n': ' ', '|': '\\|'}) -}}
         |{%- if property.class is not same as(class) -%}
                     <small>{{ 'from&nbsp;%s'|trans|format(property_link(property, false, true))|replace({'.html': '.md'})|raw }}</small>
         {%- endif -%}|
