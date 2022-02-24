@@ -2,11 +2,9 @@ name: SilverStripe Rollbar LogHandler
 on:
   pull_request:
     branches:
-      - main
       - v2
   push:
     branches:
-      - main
       - v2
 env:
   SCRUTINIZER_TOKEN: ${{ secrets.SCRUTINIZER_TOKEN }}
