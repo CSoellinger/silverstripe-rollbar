@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.0.0](https://github.com/CSoellinger/silverstripe-rollbar/tree/v2.0.0) (2022-02-24)
+
+[Full Changelog](https://github.com/CSoellinger/silverstripe-rollbar/compare/v1.0.2...v2.0.0)
+
 ## [v1.0.2](https://github.com/CSoellinger/silverstripe-rollbar/tree/v1.0.2) (2022-02-24)
 
 [Full Changelog](https://github.com/CSoellinger/silverstripe-rollbar/compare/v1.0.1...v1.0.2)
