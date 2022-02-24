@@ -100,7 +100,7 @@ class RollbarConfiguration
         'csrf_token',
     ];
 
-    private static $scrub_whitelist = [];
+    private static $scrub_safelist = [];
 
     private static $timeout = 3;
 

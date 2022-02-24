@@ -70,7 +70,7 @@ class RollbarConfigurationTest extends SapphireTest
             'auth_token',
             'csrf_token',
         ],
-        'scrub_whitelist' => [],
+        'scrub_safelist' => [],
         'timeout' => 3,
         'transmit' => true,
         'use_error_reporting' => false,

@@ -1,4 +1,4 @@
-# Index | SilverStripe Rollbar Module    
+# Index | SilverStripe Rollbar Module
 
 ## [SilverStripe Rollbar Module](index.md)
 
@@ -327,7 +327,7 @@ flushed. If null, then connection failure will not be detected and errors will n
 will be replaced with asterisks. If overriding, make sure to list all fields you want to scrub, not just fields
 you want to add to the default. Param names are converted to lowercase before comparing against the scrub list.)
 
-- $[CSoellinger/SilverStripeRollbar/Configuration/RollbarConfiguration.md#property_scrub_whitelist](<abbr title="CSoellinger\SilverStripeRollbar\Configuration\RollbarConfiguration">RollbarConfiguration</abbr>#scrub_whitelist) &mdash; <em>Property in class [<abbr title="CSoellinger\SilverStripeRollbar\Configuration\RollbarConfiguration">RollbarConfiguration</abbr>](CSoellinger/SilverStripeRollbar/Configuration/RollbarConfiguration.md)
+- $[CSoellinger/SilverStripeRollbar/Configuration/RollbarConfiguration.md#property_scrub_safelist](<abbr title="CSoellinger\SilverStripeRollbar\Configuration\RollbarConfiguration">RollbarConfiguration</abbr>#scrub_safelist) &mdash; <em>Property in class [<abbr title="CSoellinger\SilverStripeRollbar\Configuration\RollbarConfiguration">RollbarConfiguration</abbr>](CSoellinger/SilverStripeRollbar/Configuration/RollbarConfiguration.md)
 (Array of fields that you do NOT want to be scrubbed even if they match entries in scrub_fields. Entries should be
 provided in associative array dot notation, i.e. ```data.person.username```.)
 

@@ -1,4 +1,4 @@
-# CSoellinger\SilverStripeRollbar\Configuration\RollbarConfiguration | SilverStripe Rollbar Module    
+# CSoellinger\SilverStripeRollbar\Configuration\RollbarConfiguration | SilverStripe Rollbar Module
 
 ## [SilverStripe Rollbar Module](../../../index.md)
 
@@ -64,7 +64,7 @@ Rollbar configuration class. Values should be set inside yaml file.
 |<a name="property_raise_on_error"></a>static&nbsp;private&nbsp;bool|$raise_on_error|The SDK can be configured to raise exceptions passed to logging methods after reporting to Rollbar. Thanks to this users can make the code below swallow exceptions in production, but throw them in test and dev environments:||
 |<a name="property_report_suppressed"></a>static&nbsp;private&nbsp;bool|$report_suppressed|Sets whether errors suppressed with &#039;@&#039; should be reported or not||
 |<a name="property_scrub_fields"></a>static&nbsp;private&nbsp;string[]|$scrub_fields|An array of field names to scrub out of the entire payload excluding the top level ```access_token```. Values will be replaced with asterisks. If overriding, make sure to list all fields you want to scrub, not just fields you want to add to the default. Param names are converted to lowercase before comparing against the scrub list.||
-|<a name="property_scrub_whitelist"></a>static&nbsp;private&nbsp;string[]|$scrub_whitelist|Array of fields that you do NOT want to be scrubbed even if they match entries in scrub_fields. Entries should be provided in associative array dot notation, i.e. ```data.person.username```.||
+|<a name="property_scrub_safelist"></a>static&nbsp;private&nbsp;string[]|$scrub_safelist|Array of fields that you do NOT want to be scrubbed even if they match entries in scrub_fields. Entries should be provided in associative array dot notation, i.e. ```data.person.username```.||
 |<a name="property_timeout"></a>static&nbsp;private&nbsp;int|$timeout|Request timeout for posting to rollbar, in seconds.||
 |<a name="property_transmit"></a>static&nbsp;private&nbsp;bool|$transmit|Should the SDK actually perform HTTP requests to Rollbar API. This is useful if you are trying to run Rollbar in dry run mode for development or tests.||
 |<a name="property_use_error_reporting"></a>static&nbsp;private&nbsp;bool|$use_error_reporting|Sets whether to respect current ```error_reporting()``` level or not.||
@@ -87,12 +87,12 @@ Rollbar configuration class. Values should be set inside yaml file.
 ### Details
 <a name id="method___toArray"></a>
 
-### 
+###
 static <abbr title="CSoellinger\SilverStripeRollbar\Configuration\array&lt;string,mixed&gt;">array&lt;string,mixed&gt;</abbr> **__toArray**()
 
 at line 532
 
-Get all configs as an associative array.        
+Get all configs as an associative array.
 
 #### Return Value
 
@@ -102,12 +102,12 @@ Get all configs as an associative array.
 
 <a name id="method_getConfigArray"></a>
 
-### 
+###
 static <abbr title="CSoellinger\SilverStripeRollbar\Configuration\array&lt;string,mixed&gt;">array&lt;string,mixed&gt;</abbr> **getConfigArray**()
 
 at line 555
 
-Get rollbar ready config with pre filled values like environment, host, root and person(_fn).        
+Get rollbar ready config with pre filled values like environment, host, root and person(_fn).
 
 #### Return Value
 
@@ -117,13 +117,13 @@ Get rollbar ready config with pre filled values like environment, host, root and
 
 <a name id="method_getPerson"></a>
 
-### 
+###
 static null\|<abbr title="CSoellinger\SilverStripeRollbar\Configuration\array&lt;string,int">array&lt;string,int</abbr>\|<abbr title="CSoellinger\SilverStripeRollbar\Configuration\string&gt;">string&gt;</abbr> **getPerson**()
 
 at line 579
 
 Get person data from SilverStripe member if config ```capture_username``` and/or ```capture_email``` is set to
-true.        
+true.
 
 #### Return Value
 
