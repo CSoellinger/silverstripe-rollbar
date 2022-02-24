@@ -2,12 +2,10 @@ name: SilverStripe Rollbar LogHandler
 on:
   pull_request:
     branches:
-      - main
-      - v2
+      - v1
   push:
     branches:
-      - main
-      - v2
+      - v1
 env:
   SCRUTINIZER_TOKEN: ${{ secrets.SCRUTINIZER_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -28,10 +26,22 @@ jobs:
       fail-fast: false
       matrix:
         versions:
+          - php: '7.1'
+            silverstripe: '4.2.x-dev'
+          - php: '7.2'
+            silverstripe: '4.3.x-dev'
           - php: '7.3'
-            silverstripe: '4.10.x-dev'
+            silverstripe: '4.4.x-dev'
           - php: '7.4'
-            silverstripe: '4.10.x-dev'
+            silverstripe: '4.5.x-dev'
+          - php: '7.4'
+            silverstripe: '4.6.x-dev'
+          - php: '7.4'
+            silverstripe: '4.7.x-dev'
+          - php: '7.4'
+            silverstripe: '4.8.x-dev'
+          - php: '7.4'
+            silverstripe: '4.9.x-dev'
     steps:
       - name: checkout
         uses: actions/checkout@v2
