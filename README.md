@@ -9,8 +9,9 @@ This is a very configurable module for the [Rollbar Logging Service](https://rol
 
 ## Installation
 
+Use version v1.x.x for SilverStripe 4.0-4.9
 ```
-composer require csoellinger/silverstripe-rollbar
+composer require csoellinger/silverstripe-rollbar "^1"
 ```
 
 ## Configuration
