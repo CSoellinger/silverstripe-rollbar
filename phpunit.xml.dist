@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
-<phpunit backupGlobals="false" processIsolation="false" backupStaticAttributes="false" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/5.7/phpunit.xsd" bootstrap="vendor/silverstripe/framework/tests/bootstrap.php" colors="true">
-    <testsuite name="csoellinger/silverstripe-rollbar">
-        <directory>tests/</directory>
-    </testsuite>
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="false">
-            <directory suffix=".php">.</directory>
-            <exclude>
-                <directory suffix=".php">src/Factory/</directory>
-                <directory suffix=".php">tests/</directory>
-                <directory suffix=".php">vendor/</directory>
-            </exclude>
-        </whitelist>
-    </filter>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false" processIsolation="false" backupStaticAttributes="false" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" bootstrap="vendor/silverstripe/framework/tests/bootstrap.php" colors="true">
+  <coverage processUncoveredFiles="false">
+    <include>
+      <directory suffix=".php">.</directory>
+    </include>
+    <exclude>
+      <directory suffix=".php">src/Factory/</directory>
+      <directory suffix=".php">tests/</directory>
+      <directory suffix=".php">vendor/</directory>
+    </exclude>
+  </coverage>
+  <testsuite name="csoellinger/silverstripe-rollbar">
+    <directory>tests/</directory>
+  </testsuite>
 </phpunit>

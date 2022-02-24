@@ -6,3 +6,4 @@ composer.phar
 .env
 composer.lock
 /.doctum/cache/
+.phpunit.result.cache

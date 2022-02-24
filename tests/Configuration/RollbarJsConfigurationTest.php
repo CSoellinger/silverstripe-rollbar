@@ -197,13 +197,10 @@ class RollbarJsConfigurationTest extends SapphireTest
      */
     public function testDefaultConfigGetConfigArrayFailure(): void
     {
-        RollbarJsConfiguration::config()->set('accessToken', '');
+        $this->expectException(Exception::class);
 
-        try {
-            RollbarJsConfiguration::getConfigArray();
-        } catch (\Throwable $th) {
-            self::throwException($th);
-        }
+        RollbarJsConfiguration::config()->set('accessToken', '');
+        RollbarJsConfiguration::getConfigArray();
     }
 
     /**
