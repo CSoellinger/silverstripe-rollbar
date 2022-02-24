@@ -1,4 +1,4 @@
-name: SilverStripe Rollbar LogHandler
+name: v1
 on:
   pull_request:
     branches:
