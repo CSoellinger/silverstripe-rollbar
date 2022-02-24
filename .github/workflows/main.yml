@@ -2,10 +2,10 @@ name: SilverStripe Rollbar LogHandler
 on:
   pull_request:
     branches:
-      - main
+      - v1
   push:
     branches:
-      - main
+      - v1
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   php_extensions: ctype, dom, fileinfo, hash, intl, mbstring, session, simplexml, tokenizer, xml, gd, sqlite3, pcov, opcache, tidy, zip
