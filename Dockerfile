@@ -33,7 +33,6 @@ RUN install-php-extensions \
         sqlite3 \
         opcache \
         tidy \
-        xdebug-^2 \
         zip
 
 RUN apt-get purge -y \
