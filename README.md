@@ -4,18 +4,13 @@ This is a very configurable module for the [Rollbar Logging Service](https://rol
 
 ## Requirements
 
-* SilverStripe ^4.10
-* PHP >=8.0
+* SilverStripe ^4.10 for latest version
+* SilverStripe <4.10 with version 1.x.x
 * Rollbar API key
 
 ## Installation
 
 **BE AWARE TO TAKE THE VERSION WITH YOUR REQUIREMENTS**
-
-SilverStripe v4.10 with PHP >=8.0
-```
-composer require csoellinger/silverstripe-rollbar "^3"
-```
 
 SilverStripe v4.10
 ```
