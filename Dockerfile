@@ -1,6 +1,6 @@
 FROM composer:2 AS composer
 FROM mlocati/php-extension-installer:1.4 as phpei
-FROM php:8.1-apache-buster
+FROM php:8.0-apache-buster
 
 # Copy composer and install-php-extensions from other images
 COPY --from=composer /usr/bin/composer /usr/bin/composer
